@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Text</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.ibb.co/HdDt4HZ/Gay-Pride-Flag-Animated.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .black-box {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .rainbow-text {
+            font-size: 3em;
+            font-weight: bold;
+            animation: rainbow 5s linear infinite; /* Rainbow animation */
+            color: white; /* Set text color to white */
+        }
+
+        @keyframes rainbow {
+            0% { color: red; }
+            16.666% { color: orange; }
+            33.333% { color: yellow; }
+            50% { color: green; }
+            66.666% { color: blue; }
+            83.333% { color: indigo; }
+            100% { color: violet; }
+        }
+    </style>
+</head>
+<body>
+    <div class="black-box">
+        <div class="rainbow-text" id="rainbow-text">TEAM XAVIER</div>
+    </div>
+    <script>
+        // You can add JavaScript functionality here if needed
+    </script>
+</body>
+</html>
