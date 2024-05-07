@@ -3,51 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainbow Text</title>
+    <title>KSIAZKI:</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.ibb.co/HdDt4HZ/Gay-Pride-Flag-Animated.gif');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+        }
+        #sidebar {
+            width: 200px;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: #f4f4f4;
+            float: left;
         }
-
-        .black-box {
-            background-color: black;
+        #content {
+            margin-left: 220px;
             padding: 20px;
-            border-radius: 10px;
         }
-
-        .rainbow-text {
-            font-size: 3em;
-            font-weight: bold;
-            animation: rainbow 5s linear infinite; /* Rainbow animation */
-            color: white; /* Set text color to white */
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
         }
-
-        @keyframes rainbow {
-            0% { color: red; }
-            16.666% { color: orange; }
-            33.333% { color: yellow; }
-            50% { color: green; }
-            66.666% { color: blue; }
-            83.333% { color: indigo; }
-            100% { color: violet; }
+        a:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="black-box">
-        <div class="rainbow-text" id="rainbow-text">TEAM XAVIER</div>
+    <div id="sidebar">
+        <h2>KSIAZKI:</h2>
+        <ul>
+            <li><a href="zemsta.html">Aleksander Fredro: Zemsta</a></li>
+            <li><a href="kamienie_na_szaniec.html">Aleksander Kamiński: Kamienie na szaniec</a></li>
+            <li><a href="pan_tadeusz.html">Adam Mickiewicz: Pan Tadeusz</a></li>
+            <li><a href="quo_vadis.html">Henryk Sienkiewicz: Quo vadis</a></li>
+            <li><a href="maly_ksiaze.html">Antoine de Saint-Exupery: Mały książę</a></li>
+        </ul>
     </div>
-    <script>
-        // You can add JavaScript functionality here if needed
-    </script>
+    <div id="content">
+        <h1>Krotkie streszczenia lektur szkolnych z klas 4-8</h1>
+        <p>Wybierz ksiazke i dowiedz sie wiecej.</p>
+    </div>
 </body>
 </html>
