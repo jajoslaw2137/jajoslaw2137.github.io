@@ -3,35 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamienie na szaniec</title>
+    <title>KSIAZKI</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-size: 12px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.ibb.co/kxgJW8R/Adobe-Stock-236346950-Preview.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
-        .video {
-            display: inline-block;
-            margin: 5px;
+        #header {
+            padding: 20px;
+            background-color: #B2B1B1;
+            opacity: 0.8;
             text-align: center;
-            width: 150px;
         }
-        .thumbnail {
-            width: 100px;
-            height: auto;
-            cursor: pointer;
+        #sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #B2B1B1;
+            opacity: 0.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
-        .title {
-            margin-top: 5px;
-            font-weight: bold;
-            font-size: 10px;
+        #sidebar h2 {
+            margin: 0;
+            padding: 10px 0;
         }
-        h1 {
-            font-size: 16px;
+        #sidebar ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            width: 100%;
+        }
+        #sidebar ul li {
+            width: 100%;
+        }
+        #content {
+            margin-left: 220px;
+            padding: 20px;
+            background-color: #B2B1B1;
+            opacity: 0.8;
+        }
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+        }
+        a:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-    <h1>KAMIENIE NA SZANIEC</h1>
-    <div id="videos"></div>
+    <div id="header">
+        <h1>Krotkie streszczenia lektur szkolnych z klas 4-8</h1>
+        <p>Wybierz książkę i dowiedz się więcej.</p>
+    </div>
+    <div id="sidebar">
+        <h2>KSIAZKI</h2>
+        <ul>
+            <li><a href="zemsta.html">Aleksander Fredro: Zemsta</a></li>
+            <li><a href="kamienie_na_szaniec.html">Aleksander Kamiński: Kamienie na szaniec</a></li>
+            <li><a href="pan_tadeusz.html">Adam Mickiewicz: Pan Tadeusz</a></li>
+            <li><a href="quo_vadis.html">Henryk Sienkiewicz: Quo vadis</a></li>
+            <li><a href="maly_ksiaze.html">Antoine de Saint-Exupery: Mały książę</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <h1>KAMIENIE NA SZANIEC</h1>
+        <div id="videos"></div>
+    </div>
 
     <script>
         async function fetchVideos() {
