@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube API Video Search</title>
+    <style>
+        .video {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .thumbnail {
+            cursor: pointer;
+        }
+        .title {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results for "Kamienie na szaniec streszczenie"</h1>
+    <div id="videos"></div>
+
+    <script>
+        async function fetchVideos() {
+            const apiKey = 'AIzaSyBuAwhfmeORQaN5LREon83VozFLRaaYfls';
+            const query = 'kamienie na szaniec streszczenie';
+            const maxResults = 3;
+            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&maxResults=${maxResults}&key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                displayVideos(data.items);
+            } catch (error) {
+                console.error('Error fetching videos:', error);
+            }
+        }
+
+        function displayVideos(videos) {
+            const videosContainer = document.getElementById('videos');
+            videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const thumbnailUrl = video.snippet.thumbnails.high.url;
+                const title = video.snippet.title;
+
+                const videoElement = document.createElement('div');
+                videoElement.className = 'video';
+
+                const thumbnailElement = document.createElement('img');
+                thumbnailElement.src = thumbnailUrl;
+                thumbnailElement.className = 'thumbnail';
+                thumbnailElement.onclick = () => {
+                    window.location.href = `https://www.youtube.com/watch?v=${videoId}`;
+                };
+
+                const titleElement = document.createElement('div');
+                titleElement.className = 'title';
+                titleElement.textContent = title;
+
+                videoElement.appendChild(thumbnailElement);
+                videoElement.appendChild(titleElement);
+                videosContainer.appendChild(videoElement);
+            });
+        }
+
+        fetchVideos();
+    </script>
+</body>
+</html>
